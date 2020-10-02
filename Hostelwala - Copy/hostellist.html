@@ -1,0 +1,170 @@
+<html>
+
+<head>
+    <title>Hostel List</title>
+    <link href="style1.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div id="nav_other">
+            <ul>
+                <!--       <li><input type="search" class="srch" placeholder="Search for content"></li>-->
+                <li><a href="hostelmain.html">Home</a></li>
+                <li><a href="https://google.com">Contact Us</a></li>
+                <li><a href="signin.html">Sign in</a></li>
+                <li><a href="signupform.html">Create Account</a></li>
+            </ul>
+        </div>
+        <!--        <marquee>lnadbaubdibu</marquee>-->
+        <div class="user_choice">
+            <div id="icons"></div>
+            <!-- Hostels,flat-->
+
+            <div id="nav">
+                <center>
+                    <h3>Book on India's largest hostel database</h3>
+                </center>
+                <table id="opt">
+                    <tr>
+                        <th>Select City:</th>
+                        <th>
+                            <select>
+                                <option>Aurangabad</option>
+                                <option>Mumbai</option>
+                                <option>Goa</option>
+                            </select>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Select Room type:</th>
+                        <th>
+                            <select>
+                                <option>Single Seater</option>
+                                <option>Two seater</option>
+                                <option>Three seater</option>
+                                <option>Four seater</option>
+                            </select>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Set Budget:<br></th>
+                        <th><input type="range" min="10000" max="200000" value="10000" step="10000" class="slider" id="myRange"></th>
+
+                    </tr>
+                    <tr>
+                        <th colspan="2" id="price">
+                            <p> &#8377; &nbsp;<span id="demo"></span></p>
+                        </th>
+                    </tr>
+                </table><br>
+                <input type="button" value="Find Hostels" id="find" onclick="display()">
+            </div>
+
+        </div>
+
+    </div>
+    <!--    <p id="new">Hi</p>-->
+
+    <p class="hostel" id="10000">one</p>
+    <p class="hostel" id="20000">two</p>
+    <p class="hostel" id="30000">three</p>
+
+    <script>
+        //        document.getElementById("10000").style.display="none";
+        document.getElementById("10000").style.display = "none";
+        document.getElementById("20000").style.display = "none";
+        document.getElementById("30000").style.display = "none";
+        var el;
+        var prefix = 'name_';
+
+        var x1 = parseInt(document.getElementsByClassName("hostel")[0].id);
+        var x2 = parseInt(document.getElementsByClassName("hostel")[1].id);
+        var x3 = parseInt(document.getElementsByClassName("hostel")[2].id);
+        var list = [x1, x2, x3];
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("demo");
+        output.innerHTML = slider.value;
+
+        slider.oninput = function() {
+            output.innerHTML = this.value;
+        }
+
+        function display() {
+            for (var i = 0; i < 3; i++) {
+                while (list[i] <= slider.value) {
+                    console.log(list[i]);
+                    console.log(typeof list[i]);
+                    document.getElementById(list[i]).style.display = "block";
+                }
+            }
+        }
+    </script>
+
+
+
+
+
+
+    <div class="list">
+        <div id="one">
+            <h3>Bapu Boys Hostel</h3>
+            <p id="two">Description:</p>
+            <p>Boys Hostel having both AC and Non-AC options.Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
+            <input class="book" type="button" value="Book Now">
+        </div>
+        <div id="one">
+            <h3>Girls Hostel</h3>
+            <p id="three">Description:</p>
+            <p>Boys Hostel having both AC and Non-AC options.Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
+            <input class="book" type="button" value="Book Now">
+        </div>
+        <div id="one">
+            <h3>Bapu Boys Hostel</h3>
+            <p>Description:</p>
+            <p>Boys Hostel having both AC and Non-AC options.Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
+            <input class="book" type="button" value="Book Now">
+        </div>
+        <div id="one">
+            <h3>Girls Hostel</h3>
+            <p>Description:</p>
+            <p>Boys Hostel having both AC and Non-AC options.Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
+            <input class="book" type="button" value="Book Now">
+        </div>
+
+        <div class="footer">
+            <div id="footer_nav">
+                <center>
+                    <ul>
+                        <!--       <li><input type="search" class="srch" placeholder="Search for content"></li>-->
+                        <li><a href="https://google.com">Contact Us</a></li>
+                        <li><a href="signin.html">Sign in</a></li>
+                        <li><a href="signupform.html">Create Account</a></li>
+                        <li><a href="https://google.com">Other links</a></li>
+                    </ul>
+
+                    <p id="footer_content">Our other handles:</p>
+
+                    <a href="google.com">
+                        <ion-icon id="l1" name="logo-whatsapp"></ion-icon>
+                    </a>
+                    <a href="google.com">
+                        <ion-icon id="l2" name="logo-youtube"></ion-icon>
+                    </a>
+                    <br>
+                    <hr>
+
+                    <p>&copy RKMG Tech Ltd. 2010-19</p>
+                </center>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
